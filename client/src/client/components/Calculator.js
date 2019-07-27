@@ -45,7 +45,7 @@ class Calculator extends React.Component {
                         {/* Price Input */}
                         <div className={`col-sm-${this.props.col1} input-group pl-0 pr-0`}>
                             <div className="input-group-prepend" style={{margin: '1px 0px'}}>
-                                <span class="input-group-text bg-dark text-dark shadow`" id="basic-addon1"><i class="fas fa-receipt"></i></span>
+                                <span class="input-group-text bg-secondary text-dark  shadow`" id="basic-addon1"><i class="fas fa-receipt"></i></span>
                             </div>
                             <input
                                 className="form-control bg-light text-dark shadow my-0"
@@ -58,22 +58,27 @@ class Calculator extends React.Component {
                         </div>
 
                         {/* Split Multiplier */}
-                        <input 
-                            className={`col-sm-${this.props.col2} form-control bg-primary text-dark shadow`}
-                            style={{fontWeight: 'bold', fontSize: '16px'}}
-                            name="divideVal"
-                            type="number"
-                            min="2"
-                            max="1000"
-                            defaultValue="2"
-                            placeholder="Number of People"
-                            onChange={this.changeHandler}
-                        />
+                        <div className={`col-sm-${this.props.col1} input-group pl-0 pr-0`}>
+                            <div className="input-group-prepend" style={{margin: '1px 0px'}}>
+                                <span class="input-group-text bg-secondary text-dark shadow`" id="basic-addon1"><i class="fas fa-users"></i></span>
+                            </div>
+                            <input 
+                                className={`col-sm-${this.props.col2} form-control bg-primary text-dark shadow`}
+                                style={{fontWeight: 'bold', fontSize: '16px'}}
+                                name="divideVal"
+                                type="number"
+                                min="2"
+                                max="1000"
+                                defaultValue="2"
+                                placeholder="Number of People"
+                                onChange={this.changeHandler}
+                            />
+                        </div>
                     </div>
                     <div className="row">
                         {/* Display result. */}
                         <div className="w-100 mt-2 text-center">
-                            <h4 className="text-success bg-dark text-dark p-2 rounded shadow">
+                            <h4 className="text-success bg-dark text-light p-2 rounded shadow">
                                 { 'Everyone Pays $' + this.state.totalPerPerson }
                             </h4>
                         </div>
